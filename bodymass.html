@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>체질량지수</title>
+  <style>
+    body{margin:0;border:none;padding:0;}
+    .clearfix::after{content:'';display:block;clear:both;}
+    ul,ol,li{list-style:none;}
+    a{color:black;text-decoration:none;}
+    body{font-size:14px;}
+    fieldset,.button{width:600px;margin:0 auto;padding:10px;}
+    fieldset>div{float:left;width:125px;margin:0 10px;}
+    .sex h3{margin:0;text-align:center;}
+    .sex div:first-of-type{float:left;}
+    .sex div:last-of-type{float:right;}
+    .sub_tit{display:block;text-align:center;font-weight:bold;font-size: 1.17em;}
+    input[type="text"]{width:125px;}
+    input::placeholder{text-align:right;color:rgba(255,0,0,0.5);padding-right:10px;}
+
+    .button{text-align:center}
+  </style>
+</head>
+<body>
+  <h1>체질량지수 계산기</h1>
+  <form>
+    <fieldset class="clearfix">
+      <legend>체질량계산기</legend>
+      <div class="sex clearfix">
+        <h3>성별</h3>
+        <div>
+          <input type="radio" name="sex" id="men">
+          <label for="men">남</label>
+        </div>
+        <div>
+          <input type="radio" name="sex" id="girl">
+          <label for="girl">여</label>
+        </div>
+      </div>
+      <div class="age">
+        <label for="age" class="sub_tit">나이</label>
+        <input type="text" name="age" id="age" placeholder="만 세">
+      </div>
+      <div class="user_height">
+        <label for="user_height" class="sub_tit">키</label>
+        <input type="text" name="user_height" id="user_height" placeholder="cm">
+      </div>
+      <div class="user_widht">
+        <label for="user_widht" class="sub_tit">몸무게</label>
+        <input type="text" name="user_widht" id="user_widht" placeholder="kg">
+      </div>
+    </fieldset>
+  </form>
+  <div class="button">
+    <button id="send" onclick="bmiCalc();">계산하기</button>
+    <button id="reset" onclick="bmiReset();">다시하기</button>
+  </div>
+  
+  <script>
+    // BMI지수= 몸무게(kg) ÷ (신장(m) × 신장(m))
+    // 25이하 정상,25초과 정상초과
+    // var key=prompt('당신의 키(cm)는 얼마입니까?');
+    // var mom=prompt('당신의 몸무게(kg)는 얼마입니까?');
+    function bmiCalc(){
+      var key,mom,bmi,panjung;
+      key=document.querySelector('#user_height').value;
+      mom=document.querySelector('#user_widht').value;
+      key/=100;
+      bmi=mom / (key**2);
+      panjung=bmi<=25?'정상':'정상초과';
+      document.write('당신의 체질량지수 측정결과는 '+panjung+'입니다.');
+    }
+    // alert('당신의 체질량지수 결과는 ' + panjung + '입니다.');
+
+    function bmiReset(){
+      
+      document.querySelector('#men').checked=true;
+      document.querySelector('#girl').checked=false;
+      document.querySelector('#age').value=null;
+      document.querySelector('#user_height').value=null;
+      document.querySelector('#user_widht').value=null;
+
+    }
+  </script>
+</body>
+</html>

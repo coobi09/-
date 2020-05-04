@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아코디언 메뉴</title>
+    <style>
+        *{margin:0;border:none;padding:0;}
+        h1{padding:10px;font-size:24px;text-align:center;}
+        p{padding:10px 20px;}
+        input{width:100%;padding:10px;font-size:18px;color:#333;background:#eee;cursor:pointer;transition:0.3s;}
+        input:hover,.active{background:#ccc;}
+        div{height:0;overflow:hidden;transition:0.3s;}
+        .active02{height:150px;}
+
+    </style>
+</head>
+<body>
+    <h1>아코디언 메뉴</h1>
+    <p>아코디언 메뉴를 확인하시려면 아래의 섹션을 클릭해보세요.</p>
+    <input type="button" value="섹션1메뉴" onclick="fnMain(this);">
+    <div>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis aperiam error asperiores accusantium laborum alias odit beatae perferendis magnam consequuntur similique quis, delectus facilis unde exercitationem. Repudiandae tenetur voluptatum quas!
+        Dicta, adipisci totam accusamus suscipit et recusandae? Ullam eveniet ipsum repellat cum cumque asperiores! Ut ex, fugit repellat ab molestiae sit, voluptatibus quia ipsam voluptatem maxime illum veniam quam a.
+        Quibusdam placeat, dolores aliquid ipsum explicabo, asperiores molestias soluta nostrum doloribus nemo ipsam enim deserunt quasi, corrupti laborum culpa deleniti amet voluptate mollitia tempora nobis? Dignissimos eveniet nobis deleniti est.
+    </div>
+    <input type="button" value="섹션2메뉴" onclick="fnMain(this);">
+    <div>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis aperiam error asperiores accusantium laborum alias odit beatae perferendis magnam consequuntur similique quis, delectus facilis unde exercitationem. Repudiandae tenetur voluptatum quas!
+        Dicta, adipisci totam accusamus suscipit et recusandae? Ullam eveniet ipsum repellat cum cumque asperiores! Ut ex, fugit repellat ab molestiae sit, voluptatibus quia ipsam voluptatem maxime illum veniam quam a.
+        Quibusdam placeat, dolores aliquid ipsum explicabo, asperiores molestias soluta nostrum doloribus nemo ipsam enim deserunt quasi, corrupti laborum culpa deleniti amet voluptate mollitia tempora nobis? Dignissimos eveniet nobis deleniti est.
+    </div>
+    <input type="button" value="섹션3메뉴" onclick="fnMain(this);">
+    <div>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis aperiam error asperiores accusantium laborum alias odit beatae perferendis magnam consequuntur similique quis, delectus facilis unde exercitationem. Repudiandae tenetur voluptatum quas!
+        Dicta, adipisci totam accusamus suscipit et recusandae? Ullam eveniet ipsum repellat cum cumque asperiores! Ut ex, fugit repellat ab molestiae sit, voluptatibus quia ipsam voluptatem maxime illum veniam quam a.
+        Quibusdam placeat, dolores aliquid ipsum explicabo, asperiores molestias soluta nostrum doloribus nemo ipsam enim deserunt quasi, corrupti laborum culpa deleniti amet voluptate mollitia tempora nobis? Dignissimos eveniet nobis deleniti est.
+    </div>
+</body>
+<script>
+    var inputTag=document.getElementsByTagName('input');
+
+    // 메인함수
+    function fnMain(self){
+        var bkColor=backColor(self);
+        boxShow(self)
+     // 보기/감추기 함수 호출
+     }
+   
+
+    // 배경색 변경
+    function backColor(self){
+        for(var cnt=0;cnt<inputTag.length;cnt++){
+            inputTag[cnt].removeAttribute('class');
+        }
+        self.setAttribute('class');
+
+    }
+
+    // 보기/감추기
+    function boxShow(self){
+        if(self.nextElementSibling.getAttribute('class'))
+        for(var cnt=0;cnt<inputTag.length;cnt++){ 
+            inputTag[cnt].nextElementSibling.removeAttribute('class');
+        }
+        self.nextElementSibling.setAttribute('class','active02');
+    }
+
+</script>
+</html>

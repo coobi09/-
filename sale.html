@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>판매량평균</title>
+</head>
+<body>
+  
+</body>
+<script>
+  // 선언부
+  var data1,data2,data3,data4;
+  var avg,pan1,pan2;
+  const avg2=1100;
+  
+  // 입력부
+  data1=prompt('1분기 판매량을 입력하세요');
+  data2=prompt('2분기 판매량을 입력하세요');
+  data3=prompt('3분기 판매량을 입력하세요');
+  data4=prompt('4분기 판매량을 입력하세요');
+  
+  // 처리부
+  avg=(data1*1+data2*1+data3*1+data4*1)/4;
+  pan1=avg-avg2;
+  pan2=avg>=avg2?'상승':'하락';
+
+  // 출력부
+  console.log('4분기 판매량 평균은 '+avg+'입니다.');
+  console.log('전년대비 '+pan1+' '+pan2+'했습니다.');
+
+
+
+  
+</script>
+</html>

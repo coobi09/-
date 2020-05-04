@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마우스 이동 이벤트</title>
+    <script src="js/jquery-3.5.0"></script>
+    <style>
+        h1{text-align:center;}
+        p{text-align:center;font-size:16px;}
+        $(function(){
+            $(document).mousemove(function(){
+                $('#moveX').text($(this).pageX);
+                $('#moveY').text($(this).pageY);
+            });
+        })
+    </style>
+</head>
+<body>
+    <h1>Mouse Move Event</h1>
+    <p>X:<span id="moveX">0</span>px</p>
+    <p>Y:<span id="moveY">0</span>px</p>
+</body>
+</html>
